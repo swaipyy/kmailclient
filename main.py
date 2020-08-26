@@ -1,4 +1,4 @@
-import smtplib, os,  stdiomask
+import smtplib, os,  stdiomask, getpass
 from colorama import Fore, Style
 from email.message import EmailMessage
 from socket import gaierror
