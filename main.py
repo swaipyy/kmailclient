@@ -78,7 +78,7 @@ while True:
 
     elif option == "send":
         login = login_input
-        server.send_mail(login, password, kmail_client, mail_service)
+        send_mail(login, password, kmail_client, mail_service)
         os.system("clear")
 
     elif option == "?":
