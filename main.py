@@ -1,4 +1,4 @@
-import smtplib, os,  stdiomask
+import smtplib, os,  stdiomask, getpass
 from colorama import Fore, Style
 from email.message import EmailMessage
 from socket import gaierror
@@ -48,7 +48,7 @@ def send_mail(login, password, kmail_client, mail_service):
 
 os.system("cls")
 print('if u need help just type "?" ')
-input("Press ENTER")
+getpass.getpass("Press ENTER")
 os.system('cls')
 
 kmail_client =     '''
@@ -78,7 +78,7 @@ while True:
 
     elif option == "send":
         login = login_input
-        server.send_mail(login, password, kmail_client, mail_service)
+        send_mail(login, password, kmail_client, mail_service)
         os.system("clear")
 
     elif option == "?":
