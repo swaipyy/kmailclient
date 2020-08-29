@@ -3,10 +3,6 @@ from colorama import Fore, Style
 from email.message import EmailMessage
 from socket import gaierror
 
-#Send mail function
-
-###end of the function
-
 os.system("clear")
 print('if u need help just type "?" ')
 getpass.getpass("Press ENTER")
@@ -19,11 +15,6 @@ kmail_client =     '''
     |    \| '_ ` _ \ / _` | | |  / __| | |/ _ \ '_ \| __|
     | |\  \ | | | | | (_| | | | | (__| | |  __/ | | | |_
     \_| \_/_| |_| |_|\__,_|_|_|  \___|_|_|\___|_| |_|\__|'''
-
-
-#first login
-login_input = "mail"
-password = "password"
 
 while True:
 
