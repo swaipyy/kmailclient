@@ -85,11 +85,12 @@ class KmaiClient(object):
 
 
 if __name__ == '__main__':
-    banner.inicio()
-    option = input("Enter a command please: ")
-    client = KmaiClient()
-    try:
-        if option == "1":
-            client.main()
-    except KeyError:
-        print("[!] No existe esa opcion")
+    while True:
+        banner.inicio()
+        option = input("Enter a command please: ")
+        client = KmaiClient()
+        try:
+            if option == "1":
+                client.main()
+        except KeyError:
+            print("[!] No existe esa opcion")
