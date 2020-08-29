@@ -14,8 +14,12 @@ class KmaiClient(object):
     def main(self):
         os.system("cls")
         banner.opciones()
-
         opcion = input(">> ")
+
+        #Custom SMTP
+        if opcion == "6":
+            self.custom_smtp()
+
         smtp = self.smtps[opcion].split(":")[0]
         puerto = self.smtps[opcion].split(":")[1]
 
@@ -33,6 +37,12 @@ class KmaiClient(object):
         else:
             print(self.tester(smtp, puerto, login_input, password))
 
+    def custom_smtp(self):
+        smtp = input("Enter your mail service: ")
+        port = input("Enter the port (Usually is 587): ")
+        login_input = input(f"[*] [{smtp}] Enter your Email: ")
+        password = stdiomask.getpass(prompt='[*] Enter your password: ', mask ='*')
+        self.send(smtp, port, login_input, password)
 
     def send(self, smtp, puerto, login_input, password):
         receiver = input("[*] Enter the receiver: ")
@@ -83,13 +93,13 @@ class KmaiClient(object):
         except (gaierror, ConnectionRefusedError):
             return "Bad connection settings, please insert a valid mail service."
 
-
 if __name__ == '__main__':
-    banner.inicio()
-    option = input("Enter a command please: ")
-    client = KmaiClient()
-    try:
-        if option == "1":
-            client.main()
-    except KeyError:
-        print("[!] No existe esa opcion")
+    while True:
+        banner.inicio()
+        option = input("Enter a command please: ")
+        client = KmaiClient()
+        try:
+            if option == "1":
+                client.main()
+        except KeyError:
+            print("[!] No existe esa opcion")
